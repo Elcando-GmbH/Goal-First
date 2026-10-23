@@ -1,6 +1,6 @@
 # goal-first
 
-[![CI](https://github.com/Elcando-GmbH/goal-first/actions/workflows/ci.yml/badge.svg)](https://github.com/Elcando-GmbH/goal-first/actions/workflows/ci.yml)
+[![CI](https://github.com/Elcando-GmbH/Goal-First/actions/workflows/ci.yml/badge.svg)](https://github.com/Elcando-GmbH/Goal-First/actions/workflows/ci.yml)
 
 Reference implementation of the screening framework from *Goal First in Python*.
 
@@ -11,7 +11,7 @@ Goal first, constraints second, rank what remains.
 Not yet on PyPI. From source:
 
 ```bash
-pip install git+https://github.com/Elcando-GmbH/goal-first.git
+pip install git+https://github.com/Elcando-GmbH/Goal-First.git
 ```
 
 Requires Python 3.11 or later.

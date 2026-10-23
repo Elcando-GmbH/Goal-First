@@ -32,8 +32,8 @@ dependencies = [
 dev = ["pytest>=8", "ruff>=0.5"]
 
 [project.urls]
-Repository = "https://github.com/Elcando-GmbH/goal-first"
-Issues = "https://github.com/Elcando-GmbH/goal-first/issues"
+Repository = "https://github.com/Elcando-GmbH/Goal-First"
+Issues = "https://github.com/Elcando-GmbH/Goal-First/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/goalfirst"]
