@@ -1,25 +1,44 @@
 # goal-first
 
+[![CI](https://github.com/Elcando-GmbH/goal-first/actions/workflows/ci.yml/badge.svg)](https://github.com/Elcando-GmbH/goal-first/actions/workflows/ci.yml)
+
 Reference implementation of the screening framework from *Goal First in Python*.
 
 Goal first, constraints second, rank what remains.
 
-> **Status:** package skeleton. Modules land one by one, each with tests, following the
-> order of the guide: data quality → screener → metrics. A PyPI release follows once
-> all ten functions are in place.
+## Install
+
+Not yet on PyPI. From source:
+
+```bash
+pip install git+https://github.com/Elcando-GmbH/goal-first.git
+```
+
+Requires Python 3.11 or later.
 
 ## What's inside
 
-| Layer | Functions | Guide 2 | Status |
-|---|---|---|---|
-| Data quality | `validate_tickers` · `detect_split_anomalies` · `detect_zombies` | Part 2 | planned |
-| Screener | `get_annual_returns` · `screen` · `screen_dividend` · `screen_low_volatility` | Parts 3, 5 | planned |
-| Metrics | `average_annual_return` · `max_drawdown` · `benchmark_bias` | Part 4 | planned |
+| Layer | Functions | Guide 2 |
+|---|---|---|
+| Data quality | `validate_tickers` · `detect_split_anomalies` · `detect_zombies` | Part 2 |
+| Prices and returns | `get_prices` · `get_annual_returns` | Part 3 |
+| Screener | `screen` · `screen_dividend` · `screen_low_volatility` | Parts 3, 5 |
+| Metrics | `average_annual_return` · `max_drawdown` · `benchmark_bias` | Part 4 |
 
 Function names and signatures follow the guide. The guide is the specification; the code
-follows the current edition.
+follows the current edition. Every function that needs market data takes an optional
+`provider` argument at the end; `None` means yfinance.
 
-## How it will look
+Two conventions worth knowing before you read the output:
+
+- Calendar-year returns include the running year as a year-to-date figure. The framework
+  is meant to be run intra-year; a stock that is down this year should find it harder to
+  pass. Pass `include_current_year=False` to `get_annual_returns` to work with complete
+  years only.
+- Ratios (benchmark bias, loss-year ratio) divide by the number of observed years, not by
+  the requested lookback.
+
+## Quickstart
 
 ```python
 from goalfirst import validate_tickers, screen, max_drawdown, get_prices
@@ -35,6 +54,8 @@ results["max_drawdown"] = results["ticker"].apply(
 )
 print(results)
 ```
+
+Full walkthroughs for all three strategies are in [`examples/`](examples/).
 
 The screener returns a shortlist, not a buy list. The last step is always a manual review.
 

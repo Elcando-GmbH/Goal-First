@@ -7,7 +7,23 @@ Yahoo's terms, not by this package.
 
 from __future__ import annotations
 
+import warnings
+
 import pandas as pd
+
+
+def _import_yfinance():
+    """Import yfinance lazily and silence pandas deprecation noise it triggers.
+
+    Lazy, so the offline test suite does not need yfinance installed. The
+    filter is registered *after* the import: yfinance/pandas install their own
+    warning filters at import time, and a filter added before that would be
+    shadowed. Limited to the yfinance module; goalfirst's own warnings show.
+    """
+    import yfinance as yf
+
+    warnings.filterwarnings("ignore", module=r"yfinance(\..*)?")
+    return yf
 
 
 class YFinanceProvider:
@@ -24,9 +40,7 @@ class YFinanceProvider:
     # -- internals ---------------------------------------------------------
 
     def _ticker(self, ticker: str):
-        import yfinance as yf  # lazy: keeps offline tests free of the dependency
-
-        return yf.Ticker(ticker)
+        return _import_yfinance().Ticker(ticker)
 
     def _fetch(self, ticker: str, years: int) -> pd.DataFrame:
         key = (ticker, years)
