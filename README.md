@@ -68,6 +68,10 @@ package — check them before distributing, publishing or using results commerci
 
 This repository contains code only. No price data is stored here.
 
+Depending on your yfinance and pandas versions, fetches may print pandas deprecation
+warnings pointing into `yfinance/utils.py`. They originate in yfinance, not in this
+package, and do not affect results.
+
 Other data sources plug in through the `PriceProvider` protocol in `goalfirst.providers`.
 
 ## The guides
