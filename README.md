@@ -53,15 +53,16 @@ Other data sources plug in through the `PriceProvider` protocol in `goalfirst.pr
 
 - [*Goal First — A Smarter Way to Select Stocks*](https://leveragethinking.gumroad.com/l/ozgyut) — the method
 - [*Goal First in Python — Build Your Own Stock Screener*](https://leveragethinking.gumroad.com/l/meueh) — this implementation
-- *Goal First — Erst das Ziel, dann die Aktien* (German) — [PLACEHOLDER URL]
-- *Goal First in Python* (German) — [PLACEHOLDER URL]
+- [*Goal First — Erst das Ziel, dann die Aktien*](https://leveragethinking.gumroad.com/l/iucnby) — German edition of the method
+- [*Goal First in Python — Bau dir deinen eigenen Aktien-Screener*](https://leveragethinking.gumroad.com/l/sirpje) — German edition of this implementation
 
 ## Author
 
-**Laura Kruse-Stecher** · Quant Investor & Developer
-Equity investor for 20+ years. Proprietary stock selection algorithms in live trading.
-Data integrity and backtesting infrastructure: Python, PostgreSQL/TimescaleDB.
-Author of *Goal First* (as Leverage Thinking).
+**Laura Kruse-Stecher** · Quant Investor & Developer  
+Equity investor for 20+ years. Proprietary stock selection algorithms in live trading.  
+Data integrity and backtesting infrastructure: Python, PostgreSQL/TimescaleDB.  
+Economist; managing director and sole shareholder of Elcando GmbH.  
+Author of *Goal First*, writing as Leverage Thinking.
 
 ## License
 
@@ -69,4 +70,4 @@ MIT · Copyright (c) 2026 Elcando GmbH
 
 For informational purposes only. Not investment advice.
 
-Imprint / Impressum: [PLACEHOLDER — Gumroad imprint URL]
+Imprint / Impressum: [leveragethinking.gumroad.com](https://leveragethinking.gumroad.com)
